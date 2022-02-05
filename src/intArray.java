@@ -8,11 +8,14 @@ public class intArray {
 
         //There are only 10 elements allowed in the array, but we want 20 elements
         for (int i = 0; i < 20; i++) {
+            //Because we throw an exception on the 11'th place that element will actually not be counted, and thus it will print only 0
             try {
                 //Numbers between 7000 and 8000
                 arr[i] = 7000 + randGen.nextInt(1000);
+                //It will be corrected if we put another random number on i's place
             } catch (ArrayIndexOutOfBoundsException e) {
                arr = increaseArrayLength(arr);
+               arr[i] = 7000 + randGen.nextInt(1000);
             }
 
 
